@@ -1,0 +1,19 @@
+{
+  "name": "clouding_assigment2",
+  "version": "1.0.0",
+  "description": "Deploy an ATN store by using NodeJS, MongoDB and Heroku platform.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KieTuaNguyen/Clouding_Assigment2.git"
+  },
+  "author": "Kiet Tuan Nguyen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KieTuaNguyen/Clouding_Assigment2/issues"
+  },
+  "homepage": "https://github.com/KieTuaNguyen/Clouding_Assigment2#readme"
+}
