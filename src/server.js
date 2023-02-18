@@ -9,7 +9,7 @@ app.use((req, res) => {
 });
 
 app.get('/', (req, res) => {
-  res.render('index.ejs')
+  res.send('Hello World!')
 })
 
 const PORT = process.env.PORT || 7703;
