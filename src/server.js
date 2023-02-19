@@ -25,11 +25,14 @@ const database = (module.exports = () => {
 database();
 
 app.get('/', (req, res) => {
-  // res.send('Hello Kiet!')
-  res.sendFile(path.join(__dirname, 'index.ejs'));
+  res.send('Hello! My name is Kiet, cũng hơi vui khi gặp bạn.')
+  // res.sendFile(path.join(__dirname, '../src/index.html'))
+})
+app.get('/greeting', (req, res) => {
+  res.send('Hê Lô mấy con ghệ')
 })
 
-const port = process.env.PORT || 3000;
-app.listen(port, () => {
-  console.log(`Server running on port ${port}`);
+const PORT = process.env.PORT || 7703;
+app.listen(PORT, () => {
+  console.log(`Our app is running at http://localhost:${PORT}`);
 });
