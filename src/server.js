@@ -13,7 +13,7 @@ const database = (module.exports = () => {
   };
   try {
     mongoose.connect(
-      "mongodb+srv://ClusterATN:kietntgdd210002@clusteratn.cz23uub.mongodb.net/assignment2?retryWrites=true&w=majority",
+      "mongodb+srv://ClusterATN:kietntgdd210002@clusteratn.cz23uub.mongodb.net/ATNStore?retryWrites=true&w=majority",
       connectionParams
     );
     console.log("Database connected succesfully");
