@@ -1,5 +1,6 @@
 const express = require('express')
 const app = express()
+app.set('view engine', 'ejs');
 const path = require('path')
 
 /*Database*/
@@ -26,7 +27,8 @@ database();
 
 app.get('/', (req, res) => {
   // res.send('Hello! My name is Kiet, cũng hơi vui khi gặp bạn.')
-  res.sendFile(path.join(__dirname, '../src/index.ejs'))
+  // res.sendFile(path.join(__dirname, '../src/index.ejs'))
+  res.render('../src/index.ejs');
 })
 app.get('/greeting', (req, res) => {
   res.send('Hê Lô mấy con ghệ')
