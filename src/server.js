@@ -26,7 +26,7 @@ database();
 
 app.get('/', (req, res) => {
   // res.send('Hello! My name is Kiet, cũng hơi vui khi gặp bạn.')
-  res.sendFile(path.join(__dirname, '../src/index.html'))
+  res.sendFile(path.join(__dirname, '../src/index.ejs'))
 })
 app.get('/greeting', (req, res) => {
   res.send('Hê Lô mấy con ghệ')
