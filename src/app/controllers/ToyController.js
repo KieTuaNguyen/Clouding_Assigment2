@@ -11,6 +11,27 @@ class ToyController {
       })
       .catch(next);
   }
+
+  // [GET] /toys/create
+  create(req, res, next) {
+    res.render('toys/create');
+  }
+
+  // [POST] /toys/store
+  store(req, res, next) {
+    const formData = req.body;
+    const toy = new Toy({
+      toyID: Date.now(),
+      categoryID: formData.categoryID,
+      toyName: formData.toyName,
+      toyPrice: formData.toyPrice,
+      toyImage: formData.toyImage,
+      toyDescription: formData.toyDescription
+    });
+    toy.save()
+      .then(() => res.redirect('/'))
+      .catch(next);
+  }
 }
 
 module.exports = new ToyController();

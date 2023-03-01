@@ -8,6 +8,10 @@ const Toy = new Schema({
   toyPrice: { type: Number, required: true, precision: 10, scale: 2 },
   toyImage: { type: String, required: true },
   toyDescription: { type: String, required: true },
-});
+},
+  {
+    timestamps: true,
+  }
+);
 
 module.exports = mongoose.model('Toy', Toy);
