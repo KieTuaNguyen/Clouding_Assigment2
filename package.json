@@ -2,10 +2,11 @@
   "name": "clouding_assigment2",
   "version": "1.0.0",
   "description": "Deploy an ATN store by using NodeJS, MongoDB and Heroku platform.",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon --exec babel-node src/server.js"
+    "watch": "node-sass -w src/resources/scss/app.scss src/public/css/app.css",
+    "start": "nodemon --exec babel-node src/index.js"
   },
   "repository": {
     "type": "git",
@@ -28,6 +29,8 @@
     "express-handlebars": "6.0.7",
     "handlebars": "4.7.7",
     "mongoose": "6.9.2",
+    "morgan": "1.10.0",
+    "node-sass": "8.0.0",
     "nodemon": "2.0.20"
   }
 }

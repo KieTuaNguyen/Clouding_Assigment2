@@ -2,13 +2,13 @@
 const mongoose = require('mongoose')
 mongoose.set('strictQuery', false);
 
-const database = (module.exports = () => {
+const database = async () => {
   const connectionParams = {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   };
   try {
-    mongoose.connect(
+    await mongoose.connect(
       "mongodb+srv://ClusterATN:kietntgdd210002@clusteratn.cz23uub.mongodb.net/ATNStore?retryWrites=true&w=majority",
       connectionParams
     );
@@ -17,6 +17,6 @@ const database = (module.exports = () => {
     console.log(error);
     console.log("MongoDB connection failed");
   }
-});
+};
 
-module.exports = { database };
+module.exports = database;
