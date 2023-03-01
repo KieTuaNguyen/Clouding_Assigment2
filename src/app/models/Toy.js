@@ -7,6 +7,7 @@ const Toy = new Schema({
   toyName: { type: String, required: true },
   toyPrice: { type: Number, required: true, precision: 10, scale: 2 },
   toyImage: { type: String, required: true },
+  toyDescription: { type: String, required: true },
 });
 
 module.exports = mongoose.model('Toy', Toy);
