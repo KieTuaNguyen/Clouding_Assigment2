@@ -1,4 +1,5 @@
 const toysRouter = require('./toys');
+const meRouter = require('./me');
 const siteRouter = require('./site');
 
 function route(app) {
@@ -9,6 +10,7 @@ function route(app) {
   // Update = Put
   // Delete = Delete
   app.use('/toys', toysRouter);
+  app.use('/me', meRouter);
   app.use('/', siteRouter);
 
 }

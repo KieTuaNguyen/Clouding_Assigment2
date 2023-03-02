@@ -32,6 +32,22 @@ class ToyController {
       .then(() => res.redirect('/'))
       .catch(next);
   }
+
+  // [GET] /toys/edit
+  edit(req, res, next) {
+    Toy.findOne({ toyID: req.params.toyID })
+      .then(toy => {
+        res.render('toys/edit', { toy: mongooseToObject(toy) });
+      })
+      .catch(next);
+  }
+
+  // [PUT] /toys/:toyID
+  update(req, res, next) {
+    Toy.updateOne({ toyID: req.params.toyID }, req.body)
+      .then(() => res.redirect('/me/stored/toys'))
+      .catch(next);
+  }
 }
 
 module.exports = new ToyController();

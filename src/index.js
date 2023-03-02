@@ -6,6 +6,7 @@ const app = express();
 const PORT = process.env.PORT || 7703;
 const route = require('./routes/index');
 const connectDB = require('./config/connectDB');
+const methodOverride = require('method-override');
 
 // Connect to DB
 connectDB();
@@ -16,6 +17,8 @@ app.use(express.urlencoded({
   extended: true
 }));
 app.use(express.json());
+
+app.use(methodOverride('_method'));
 
 // HTTP logger
 // app.use(morgan('combined'));

@@ -1,0 +1,33 @@
+<div class="mt-4">
+  <div class="container">
+    <h3>Products</h3>
+    <table class="table mt-4">
+      <thead class="thead-light">
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">Name</th>
+          <th scope="col">Image</th>
+          <th scope="col">Price</th>
+          <th scope="col">Description</th>
+          <th scope="col">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each toys}}
+        <tr>
+          <th>{{this.toyID}}</th>
+          <td>{{this.toyName}}</td>
+          <td><img class="card-img-top" src="{{this.toyImage}}" alt="{{this.toyName}} image">
+          </td>
+          <td>{{this.toyPrice}}</td>
+          <td>{{this.toyDescription}}</td>
+          <td>
+            <a href="/toys/{{this.toyID}}/edit" class="btn btn-outline-dark">Edit</a>
+            <a href="/toys/{{this.toyID}}/edit" class="btn btn-outline-danger">Delete</a>
+          </td>
+        </tr>
+        {{/each}}
+      </tbody>
+    </table>
+  </div>
+</div>
