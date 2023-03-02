@@ -1,6 +1,7 @@
 const Toy = require('../models/Toy');
 const { mutipleMongooseToObject } = require('../../util/mongoose');
 class SiteController {
+
   // [GET] /
   index(req, res, next) {
     Toy.find({})
@@ -13,15 +14,9 @@ class SiteController {
     // res.render('home');
   }
 
-
   // [GET] /about
   about(req, res) {
     res.render('about');
-  }
-
-  // [GET] /search
-  search(req, res) {
-    res.render('search');
   }
 }
 

@@ -1,5 +1,5 @@
 const Toy = require('../models/Toy');
-const { mongooseToObject } = require('../../util/mongoose');
+const { mongooseToObject, mutipleMongooseToObject } = require('../../util/mongoose');
 
 class ToyController {
 
@@ -53,6 +53,17 @@ class ToyController {
   destroy(req, res, next) {
     Toy.deleteOne({ toyID: req.params.toyID })
       .then(() => res.redirect('back'))
+      .catch(next);
+  }
+
+  // [GET] /toys/search
+  search(req, res, next) {
+    const q = req.query.q;
+
+    Toy.find({ toyName: new RegExp(q, 'i') })
+      .then(toys => {
+        res.render('home', { toys: mutipleMongooseToObject(toys) });
+      })
       .catch(next);
   }
 }
