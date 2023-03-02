@@ -20,7 +20,7 @@
           <td><img class="card-img-top" src="{{this.toyImage}}" alt="{{this.toyName}} image">
           </td>
           <td>${{this.toyPrice}}</td>
-          <td>{{this.toyDescription}}</td>
+          <td style="text-align: justify;">{{this.toyDescription}}</td>
           <td>
             <a href="/toys/{{this.toyID}}/edit" class="btn btn-outline-dark">Edit</a>
             <a href="/toys/{{this.toyID}}/delete" data-toggle="modal" data-target="#delete-toy-modal"
