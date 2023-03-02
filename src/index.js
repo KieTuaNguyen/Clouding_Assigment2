@@ -7,6 +7,7 @@ const PORT = process.env.PORT || 7703;
 const route = require('./routes/index');
 const connectDB = require('./config/connectDB');
 const methodOverride = require('method-override');
+const Handlebars = require('handlebars');
 
 // Connect to DB
 connectDB();
@@ -27,6 +28,21 @@ app.use(methodOverride('_method'));
 app.engine('.hbs', engine({
   extname: '.hbs'
 }))
+
+Handlebars.registerHelper('truncateWords', function (str, numWords) {
+  if (!str) {
+    return '';
+  }
+
+  const words = str.split(' ');
+  if (words.length <= numWords) {
+    return str;
+  }
+
+  const truncatedWords = words.slice(0, numWords);
+  return truncatedWords.join(' ') + '...';
+});
+
 app.set('view engine', '.hbs');
 app.set('views', path.join(__dirname, 'resources', 'views'));
 

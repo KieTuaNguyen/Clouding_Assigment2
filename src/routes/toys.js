@@ -7,6 +7,7 @@ router.get('/create', toyController.create);
 router.post('/store', toyController.store);
 router.get('/:toyID/edit', toyController.edit);
 router.put('/:toyID', toyController.update);
+router.delete('/:toyID', toyController.destroy);
 router.get('/:toyID', toyController.show);
 
 module.exports = router;

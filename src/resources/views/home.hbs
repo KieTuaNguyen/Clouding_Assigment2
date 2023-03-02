@@ -20,6 +20,7 @@
           </a>
           <div class="card-body">
             <h5 class="card-title">{{this.toyName}}</h5>
+            <p class="card-text">{{truncateWords this.toyDescription 20}}
             <p class="card-text">${{this.toyPrice}}
             </p>
             <a href="/toys/{{this.toyID}}" class="btn btn-secondary">More Details</a>

@@ -48,6 +48,13 @@ class ToyController {
       .then(() => res.redirect('/me/stored/toys'))
       .catch(next);
   }
+
+  // [DELETE] /toys/:toyID
+  destroy(req, res, next) {
+    Toy.deleteOne({ toyID: req.params.toyID })
+      .then(() => res.redirect('back'))
+      .catch(next);
+  }
 }
 
 module.exports = new ToyController();
